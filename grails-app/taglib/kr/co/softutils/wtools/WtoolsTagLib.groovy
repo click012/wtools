@@ -1,12 +1,12 @@
 package kr.co.softutils.wtools
 
 import grails.util.Environment
-import grails.util.Holders
-
 
 class WtoolsTagLib {
+
 	static namespace = 'wtools'
 
+	def grailsApplication
 
 	/**
 	 * @emptyTag
@@ -15,7 +15,7 @@ class WtoolsTagLib {
 	 * @attr timeout Assured gsp page compile time
 	 */
 	def refresh = { attrs ->
-		if (Environment.current != Environment.DEVELOPMENT) {
+		if (!Environment.isDevelopmentMode()) {
 			return
 		}
 
@@ -42,7 +42,7 @@ if (typeof jQuery == 'undefined') {
                 if (data == true) {
                     setTimeout(function() {
                         window.location.reload()
-                    }, ${attrs.timeout ?: Holders.config.wtools.timeout ?: 500})
+                    }, ${attrs.timeout ?: grailsApplication.config.wtools.timeout ?: 500})
                 }
                 ;
             },

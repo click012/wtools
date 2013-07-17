@@ -1,10 +1,10 @@
 package kr.co.softutils.wtools
 
-class WtoolsController {
-	def files = [:]
-	
+import org.codehaus.groovy.grails.web.pages.GroovyPage
 
-    def isModified() { 
+class WtoolsController {
+
+	def isModified() { 
 		def lastModified = new File(params.file).lastModified()
 		def result = lastModified > params.long('lastModified', 0)
 
@@ -15,16 +15,12 @@ class WtoolsController {
 		}
 		*/
 		
-		
-		
 		render(contentType:'text/json', text:result)
 	}
 
-
-
-        def init() {
-            org.codehaus.groovy.grails.web.pages.GroovyPage.class.metaClass.refresh = {
-                delegate.getGroovyPageFileName()
-            }
-        }
+	def init() {
+		GroovyPage.metaClass.refresh = { ->
+			delegate.getGroovyPageFileName()
+		}
+	}
 }
