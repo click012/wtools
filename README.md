@@ -11,9 +11,9 @@ Thank you.
 Usage
 ---
 This plugin is auto refresh for browser.
-1. Gsp page insert tag <wtools:refresh this="${this}" /> at header section.
-2. open web browser gsp page ex) Editing 'book/list.gsp', open 'http://localhost:8080/test/book/list'
-3. After gsp page editing and saving... play coding~~~
+# Gsp page insert tag <wtools:refresh this="${this}" /> at header section.
+# open web browser gsp page ex) Editing 'book/list.gsp', open 'http://localhost:8080/test/book/list'
+# After gsp page editing and saving... play coding~~~
 
 
 Config
