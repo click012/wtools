@@ -8,12 +8,14 @@ Ask to be excused. My english is very poor...T.T,
 You check correct wrong text...plz... 
 Thank you.
 
+
 Usage
 ---
 This plugin is auto refresh for browser.
-* Gsp page insert tag <wtools:refresh this="${this}" /> at header section.
-* open web browser gsp page ex) Editing 'book/list.gsp', open 'http://localhost:8080/test/book/list'
-* After gsp page editing and saving... play coding~~~
+
+1. Gsp page insert tag <wtools:refresh this="${this}" /> at header section.
+1. open web browser gsp page ex) Editing 'book/list.gsp', open 'http://localhost:8080/test/book/list'
+1. After gsp page editing and saving... play coding~~~
 
 
 Config
@@ -24,17 +26,18 @@ Attribute 'timeout' is assured gsp page compile time.
 
 * 'Config.groovy' file setting:
 
-    wtools.timeout = 1000
+  `wtools.timeout = 1000`
+
 
 * attribute :
 
+  `<wtools:refresh this="${this}" timeout="1000" />`
 
-    <wtools:refresh this="${this}" timeout="1000" />
 
 * default:
 
+  `500 msec`
 
-    500 msec
 
 Required
 ---
